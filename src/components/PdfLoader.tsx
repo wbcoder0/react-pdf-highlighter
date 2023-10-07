@@ -79,7 +79,7 @@ export class PdfLoader extends Component<Props, State> {
         }
 
         return getDocument({
-          ...this.props,
+          ...(data ? { data } : { url }),
           ownerDocument,
           cMapUrl,
           cMapPacked,
