@@ -1,8 +1,8 @@
 {
-  "name": "react-pdf-highlighter",
-  "version": "6.1.0",
+  "name": "@wbcoder0/react-pdf-highlighter",
+  "version": "0.0.1",
   "description": "Set of React components for PDF annotation",
-  "author": "Artem Tyurin <artem.tyurin@gmail.com>",
+  "author": "@wbcoder0 and Artem Tyurin <artem.tyurin@gmail.com>",
   "license": "MIT",
   "keywords": [
     "pdf",
@@ -20,10 +20,10 @@
     "start": "npm run dev",
     "dev": "(cd ./example && vite)",
     "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:copy-styles && npm run build:example",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir ./dist/cjs",
+    "build:esm": "npx tsc",
+    "build:cjs": " npx tsc --module commonjs --outDir ./dist/cjs",
     "build:copy-styles": "cp -r ./src/style ./dist/esm; cp -r ./src/style ./dist/cjs",
-    "build:example": "(cd ./example && tsc && vite build)",
+    "build:example": "(cd ./example && npx tsc && vite build)",
     "test": "tsc && npm run format:check && npm run test:integration",
     "test:integration": "BROWSER=none jest --maxWorkers=1 -c jest.config.js",
     "format": "prettier --write './**/*.{js,ts,tsx}'",
@@ -37,14 +37,15 @@
   "dependencies": {
     "lodash.debounce": "^4.0.8",
     "pdfjs-dist": "2.16.105",
-    "react-rnd": "^10.1.10"
+    "react-rnd": "^10.1.10",
+    "typescript": "^5.2.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agentcooper/react-pdf-highlighter.git"
+    "url": "git+https://github.com/wbcoder0/react-pdf-highlighter.git"
   },
   "bugs": {
-    "url": "https://github.com/agentcooper/react-pdf-highlighter/issues"
+    "url": "https://github.com/wbcoder0/react-pdf-highlighter/issues"
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.6",
@@ -56,7 +57,6 @@
     "jest-puppeteer": "^9.0.0",
     "prettier": "^2.3.2",
     "puppeteer": "^20.9.0",
-    "typescript": "^5.1.6",
     "vite": "^2.8.0"
   }
 }
