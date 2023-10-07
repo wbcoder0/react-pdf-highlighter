@@ -74,7 +74,7 @@ export class PdfLoader extends Component<Props, State> {
     Promise.resolve()
       .then(() => discardedDocument && discardedDocument.destroy())
       .then(() => {
-        if (!url || !data) {
+        if (!url && !data) {
           return;
         }
 
