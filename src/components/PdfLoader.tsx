@@ -46,7 +46,10 @@ export class PdfLoader extends Component<Props, State> {
   }
 
   componentDidUpdate({ url, data }: Props) {
-    if (this.props.url !== url || this.props.data !== data) {
+    if (
+      this.props.url !== url ||
+      !this.compareUint8Arrays(this.props.data, data)
+    ) {
       this.load();
     }
   }
@@ -59,6 +62,21 @@ export class PdfLoader extends Component<Props, State> {
     }
 
     this.setState({ pdfDocument: null, error });
+  }
+  compareUint8Arrays(a: Uint8Array | undefined, b: Uint8Array | undefined) {
+    if (a === undefined || b === undefined) {
+      return false;
+    }
+
+    if (a.byteLength !== b.byteLength) {
+      return false;
+    }
+    for (let i = 0; i < a.byteLength; i++) {
+      if (a[i] !== b[i]) {
+        return false;
+      }
+    }
+    return true;
   }
 
   load() {
