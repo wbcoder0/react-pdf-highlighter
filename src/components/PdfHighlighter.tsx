@@ -79,7 +79,7 @@ interface Props<T_HT> {
     hideTipAndSelection: () => void,
     transformSelection: () => void
   ) => JSX.Element | null;
-  enableAreaSelection: (event: MouseEvent) => boolean;
+  enableAreaSelection?: (event: MouseEvent) => boolean;
 }
 
 const EMPTY_ID = "empty-id";

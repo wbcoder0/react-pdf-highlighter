@@ -47,8 +47,8 @@ export class PdfLoader extends Component<Props, State> {
 
   componentDidUpdate({ url, data }: Props) {
     if (
-      this.props.url !== url ||
-      !this.compareUint8Arrays(this.props.data, data)
+      (this.props.url && this.props.url !== url) ||
+      (this.props.data && !this.compareUint8Arrays(this.props.data, data))
     ) {
       this.load();
     }
@@ -63,6 +63,7 @@ export class PdfLoader extends Component<Props, State> {
 
     this.setState({ pdfDocument: null, error });
   }
+
   compareUint8Arrays(a: Uint8Array | undefined, b: Uint8Array | undefined) {
     if (a === undefined || b === undefined) {
       return false;
