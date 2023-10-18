@@ -12,7 +12,7 @@ interface Props {
   onClick?: () => void;
   onMouseOver?: () => void;
   onMouseOut?: () => void;
-  comment: {
+  comment?: {
     emoji: string;
     text: string;
   };
