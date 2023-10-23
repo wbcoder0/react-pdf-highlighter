@@ -80,6 +80,7 @@ interface Props<T_HT> {
     transformSelection: () => void
   ) => JSX.Element | null;
   enableAreaSelection?: (event: MouseEvent) => boolean;
+  enableContextMenu?: boolean;
 }
 
 const EMPTY_ID = "empty-id";
@@ -548,14 +549,17 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
   debouncedScaleValue: () => void = debounce(this.handleScaleValue, 500);
 
   render() {
-    const { onSelectionFinished, enableAreaSelection } = this.props;
+    const { onSelectionFinished, enableAreaSelection, enableContextMenu } =
+      this.props;
 
     return (
       <div onPointerDown={this.onMouseDown}>
         <div
           ref={this.containerNodeRef}
           className="PdfHighlighter"
-          onContextMenu={(e) => e.preventDefault()}
+          onContextMenu={
+            enableContextMenu ? undefined : (e) => e.preventDefault()
+          }
         >
           <div className="pdfViewer" />
           {this.renderTip()}
