@@ -1,6 +1,6 @@
 {
   "name": "@wbcoder0/react-pdf-highlighter",
-  "version": "0.0.16-alpha.2",
+  "version": "0.0.16-alpha.4",
   "description": "Set of React components for PDF annotation",
   "author": "@wbcoder0 and Artem Tyurin <artem.tyurin@gmail.com>",
   "license": "MIT",

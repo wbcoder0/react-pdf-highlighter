@@ -431,7 +431,6 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
 
     if (selection.isCollapsed) {
       this.setState({ isCollapsed: true });
-      this.hideTipAndSelection();
       return;
     }
 
