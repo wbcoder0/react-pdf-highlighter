@@ -30,6 +30,8 @@ export class PdfLoader extends Component<Props, State> {
 
   static defaultProps = {
     workerSrc: "https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js",
+    cMapUrl: "https://unpkg.com/pdfjs-dist@2.16.105/cmaps/",
+    cMapPacked: true,
   };
 
   documentRef = React.createRef<HTMLElement>();
