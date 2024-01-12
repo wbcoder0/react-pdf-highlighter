@@ -543,6 +543,12 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
   handleScaleValue = () => {
     if (this.viewer) {
       this.viewer.currentScaleValue = this.props.pdfScaleValue; //"page-width";
+      if (this.containerNodeRef.current) {
+        // 通过修改scrollLeft让pdf居中
+        this.containerNodeRef.current.scrollLeft =
+          (this.containerNodeRef.current?.scrollWidth || 0) / 2 -
+          (this.containerNodeRef.current?.clientWidth || 0) / 2;
+      }
     }
   };
 
