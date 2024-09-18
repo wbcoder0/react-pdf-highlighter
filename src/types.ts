@@ -42,6 +42,7 @@ export interface Content {
 
 export interface HighlightContent {
   content: Content;
+  type?: string;
 }
 
 export interface Comment {
