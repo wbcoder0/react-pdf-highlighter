@@ -38,11 +38,11 @@ export interface ScaledPosition {
 export interface Content {
   text?: string;
   image?: string;
+  type?: string;
 }
 
 export interface HighlightContent {
   content: Content;
-  type?: string;
 }
 
 export interface Comment {
